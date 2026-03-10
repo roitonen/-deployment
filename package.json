@@ -1,0 +1,24 @@
+{
+  "name": "-deployment",
+  "version": "1.0.0",
+  "description": "Software Testing course assignment - LAB University",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roitonen/-deployment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roitonen/-deployment/issues"
+  },
+  "homepage": "https://github.com/roitonen/-deployment#readme",
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5"
+  }
+}
