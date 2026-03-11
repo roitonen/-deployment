@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha tests/test.js --reporter spec",
-    "coverage": "c8 --all --include 'src/**' --exclude 'src/.internal/**' mocha tests/test.js"
+    "coverage": "c8 --all --include 'src/**' --exclude 'src/.internal/**' --reporter=lcov --reporter=text mocha tests/test.js"
   },
   "repository": {
     "type": "git",
