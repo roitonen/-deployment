@@ -37,8 +37,8 @@ This repository contains unit tests for the AT00CK37-3003 library. The tests are
 
 ### Tools Used
 
-| Tool                     | Purpose            |
-| ------------------------ | ------------------ |
+| Tool               | Purpose            |
+| ------------------ | ------------------ |
 | **Mocha**          | Test runner        |
 | **Chai**           | Assertion library  |
 | **c8**             | Code coverage      |
@@ -60,8 +60,8 @@ Mocha and Chai were chosen because they are a well-established combination for J
 
 ## Files Tested
 
-| File                     | Tested        | Notes              |
-| ------------------------ | ------------- | ------------------ |
+| File                   | Tested        | Notes              |
+| ---------------------- | ------------- | ------------------ |
 | `castArray.js`         | ✅            | Bug found          |
 | `clamp.js`             | ✅            | Bug found          |
 | `compact.js`           | ✅            | Bug found          |
@@ -93,8 +93,8 @@ Mocha and Chai were chosen because they are a well-established combination for J
 
 ## Files NOT Tested
 
-| File                | Reason                                          |
-| ------------------- | ----------------------------------------------- |
+| File              | Reason                                        |
+| ----------------- | --------------------------------------------- |
 | `add.js`          | Depends on `.internal/createMathOperation.js` |
 | `at.js`           | Depends on `.internal/baseAt.js`              |
 | `camelCase.js`    | Depends on `.internal` modules                |
@@ -110,7 +110,7 @@ Mocha and Chai were chosen because they are a well-established combination for J
 | `isTypedArray.js` | Depends on `.internal` modules                |
 | `keys.js`         | Depends on `.internal` modules                |
 | `reduce.js`       | Depends on `.internal` modules                |
-| `src/.internal/*` | Excluded per assignment requirements            |
+| `src/.internal/*` | Excluded per assignment requirements          |
 
 ---
 
@@ -129,9 +129,31 @@ See all workflow runs: [GitHub Actions](https://github.com/roitonen/-deployment/
 4. Run tests with coverage (`npm run coverage`)
 5. Upload coverage report to Coveralls
 
+#### GitHub Actions Workflow Run
+
+*The screenshot below shows a successful workflow run on GitHub Actions:*
+
+![Screenshot](docs/workflow.png)
+
+> *"The pipeline is configured to always upload coverage to Coveralls even when tests fail (exit code 12 = 12 intentionally failing tests documenting bugs)."*
+
+
+#### Test Output from GitHub Actions
+
+*The screenshot below shows the test output from the GitHub Actions 
+pipeline console (127 passing, 12 failing):*
+
+![Screenshot](docs/test-results.png)
+
 ### Coveralls
 
 Coverage reports are automatically sent to Coveralls after each pipeline run. The badge at the top of this README shows the current coverage percentage.
+
+#### Coveralls Coverage Report
+
+The screenshot below shows the current coverage report on Coveralls:
+
+![Screenshot](docs/coveralls.png)
 
 ---
 
@@ -220,54 +242,54 @@ The 12 failing tests are **intentional** — they document bugs found in the lib
 ### Coverage
 
 ```
-----------------------|---------|----------|---------|---------|
-File                  | % Stmts | % Branch | % Funcs | % Lines |
-----------------------|---------|----------|---------|---------|
-All files             |   64.88 |    86.08 |   65.11 |   64.88 |
- add.js               |       0 |        0 |       0 |       0 |
- at.js                |       0 |        0 |       0 |       0 |
- camelCase.js         |       0 |        0 |       0 |       0 |
- capitalize.js        |     100 |      100 |     100 |     100 |
- castArray.js         |     100 |      100 |     100 |     100 |
- ceil.js              |       0 |        0 |       0 |       0 |
- chunk.js             |       0 |        0 |       0 |       0 |
- clamp.js             |     100 |    88.88 |     100 |     100 |
- compact.js           |     100 |      100 |     100 |     100 |
- countBy.js           |       0 |        0 |       0 |       0 |
- defaultTo.js         |     100 |      100 |     100 |     100 |
- defaultToAny.js      |     100 |      100 |     100 |     100 |
- difference.js        |       0 |        0 |       0 |       0 |
- divide.js            |     100 |      100 |     100 |     100 |
- drop.js              |     100 |      100 |     100 |     100 |
- endsWith.js          |     100 |      100 |     100 |     100 |
- eq.js                |     100 |      100 |     100 |     100 |
- every.js             |     100 |      100 |     100 |     100 |
- filter.js            |     100 |       80 |     100 |     100 |
- get.js               |       0 |        0 |       0 |       0 |
- isArguments.js       |       0 |        0 |       0 |       0 |
- isArrayLike.js       |     100 |      100 |     100 |     100 |
- isArrayLikeObject.js |     100 |      100 |     100 |     100 |
- isBoolean.js         |     100 |       80 |     100 |     100 |
- isBuffer.js          |       0 |        0 |       0 |       0 |
- isDate.js            |       0 |        0 |       0 |       0 |
- isEmpty.js           |       0 |        0 |       0 |       0 |
- isLength.js          |     100 |      100 |     100 |     100 |
- isObject.js          |     100 |      100 |     100 |     100 |
- isObjectLike.js      |     100 |      100 |     100 |     100 |
- isSymbol.js          |     100 |      100 |     100 |     100 |
- isTypedArray.js      |       0 |        0 |       0 |       0 |
- keys.js              |       0 |        0 |       0 |       0 |
- map.js               |     100 |      100 |     100 |     100 |
- memoize.js           |     100 |    84.61 |     100 |     100 |
- reduce.js            |       0 |        0 |       0 |       0 |
- slice.js             |     100 |    94.73 |     100 |     100 |
- toFinite.js          |     100 |    91.66 |     100 |     100 |
- toInteger.js         |     100 |      100 |     100 |     100 |
- toNumber.js          |    92.3 |    81.25 |     100 |    92.3 |
- toString.js          |   95.23 |    84.61 |     100 |   95.23 |
- upperFirst.js        |     100 |      100 |     100 |     100 |
- words.js             |     100 |      100 |     100 |     100 |
-----------------------|---------|----------|---------|---------|
+-------------------------|-----------|------------|-----------|-----------|
+| File                   | % Stmts   | % Branch   | % Funcs   | % Lines   |
+| ---------------------- | --------- | ---------- | --------- | --------- |
+| All files              | 64.88     | 86.08      | 65.11     | 64.88     |
+| add.js                 | 0         | 0          | 0         | 0         |
+| at.js                  | 0         | 0          | 0         | 0         |
+| camelCase.js           | 0         | 0          | 0         | 0         |
+| capitalize.js          | 100       | 100        | 100       | 100       |
+| castArray.js           | 100       | 100        | 100       | 100       |
+| ceil.js                | 0         | 0          | 0         | 0         |
+| chunk.js               | 0         | 0          | 0         | 0         |
+| clamp.js               | 100       | 88.88      | 100       | 100       |
+| compact.js             | 100       | 100        | 100       | 100       |
+| countBy.js             | 0         | 0          | 0         | 0         |
+| defaultTo.js           | 100       | 100        | 100       | 100       |
+| defaultToAny.js        | 100       | 100        | 100       | 100       |
+| difference.js          | 0         | 0          | 0         | 0         |
+| divide.js              | 100       | 100        | 100       | 100       |
+| drop.js                | 100       | 100        | 100       | 100       |
+| endsWith.js            | 100       | 100        | 100       | 100       |
+| eq.js                  | 100       | 100        | 100       | 100       |
+| every.js               | 100       | 100        | 100       | 100       |
+| filter.js              | 100       | 80         | 100       | 100       |
+| get.js                 | 0         | 0          | 0         | 0         |
+| isArguments.js         | 0         | 0          | 0         | 0         |
+| isArrayLike.js         | 100       | 100        | 100       | 100       |
+| isArrayLikeObject.js   | 100       | 100        | 100       | 100       |
+| isBoolean.js           | 100       | 80         | 100       | 100       |
+| isBuffer.js            | 0         | 0          | 0         | 0         |
+| isDate.js              | 0         | 0          | 0         | 0         |
+| isEmpty.js             | 0         | 0          | 0         | 0         |
+| isLength.js            | 100       | 100        | 100       | 100       |
+| isObject.js            | 100       | 100        | 100       | 100       |
+| isObjectLike.js        | 100       | 100        | 100       | 100       |
+| isSymbol.js            | 100       | 100        | 100       | 100       |
+| isTypedArray.js        | 0         | 0          | 0         | 0         |
+| keys.js                | 0         | 0          | 0         | 0         |
+| map.js                 | 100       | 100        | 100       | 100       |
+| memoize.js             | 100       | 84.61      | 100       | 100       |
+| reduce.js              | 0         | 0          | 0         | 0         |
+| slice.js               | 100       | 94.73      | 100       | 100       |
+| toFinite.js            | 100       | 91.66      | 100       | 100       |
+| toInteger.js           | 100       | 100        | 100       | 100       |
+| toNumber.js            | 92.3      | 81.25      | 100       | 92.3      |
+| toString.js            | 95.23     | 84.61      | 100       | 95.23     |
+| upperFirst.js          | 100       | 100        | 100       | 100       |
+| words.js               | 100       | 100        | 100       | 100       |
+| ---------------------- | --------- | ---------- | --------- | --------- |
 ```
 
 Coverage exceeds the required **60%** threshold.
@@ -284,15 +306,15 @@ See all issues: [GitHub Issues](https://github.com/roitonen/-deployment/issues)
 
 Each issue contains a full bug report with steps to reproduce, expected vs actual behavior, and root cause analysis. Click on any issue title in the table below to view the full report on GitHub.
 
-| # | File             | Issue                                                                                                                                                         |
-| - | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | `castArray.js` | [castArray() with no arguments returns [undefined] instead of []](https://github.com/roitonen/-deployment/issues/1)                                              |
-| 2 | `clamp.js`     | [clamp(10, -5, 5) returns -5 instead of 5 — comparison logic is inverted](https://github.com/roitonen/-deployment/issues/2)                                     |
-| 3 | `compact.js`   | [compact([0, 1, false, 2, &#39;&#39;, 3]) returns [2, 3] instead of [1, 2, 3] — first truthy element is lost](https://github.com/roitonen/-deployment/issues/3) |
-| 4 | `defaultTo.js` | [defaultTo(NaN, 10) returns NaN instead of 10 — NaN is not handled](https://github.com/roitonen/-deployment/issues/4)                                           |
-| 5 | `divide.js`    | [divide(6, 4) returns 1 instead of 1.5 — dividend is ignored in calculation](https://github.com/roitonen/-deployment/issues/5)                                  |
-| 6 | `filter.js`    | [filter([1, 2, 3], x =&gt; x &gt; 10) returns [[]] instead of [] — result initialized incorrectly](https://github.com/roitonen/-deployment/issues/6)            |
-| 7 | `toString.js`  | [toString(null) returns &#34;null&#34; instead of &#34;&#34; — null and undefined not handled](https://github.com/roitonen/-deployment/issues/7)                |
+| #   | File           | Issue                                                                                                                                                           |
+| --- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | `castArray.js` | [castArray() with no arguments returns [undefined] instead of []](https://github.com/roitonen/-deployment/issues/1)                                             |
+| 2   | `clamp.js`     | [clamp(10, -5, 5) returns -5 instead of 5 — comparison logic is inverted](https://github.com/roitonen/-deployment/issues/2)                                     |
+| 3   | `compact.js`   | [compact([0, 1, false, 2, &#39;&#39;, 3]) returns [2, 3] instead of [1, 2, 3] — first truthy element is lost](https://github.com/roitonen/-deployment/issues/3) |
+| 4   | `defaultTo.js` | [defaultTo(NaN, 10) returns NaN instead of 10 — NaN is not handled](https://github.com/roitonen/-deployment/issues/4)                                           |
+| 5   | `divide.js`    | [divide(6, 4) returns 1 instead of 1.5 — dividend is ignored in calculation](https://github.com/roitonen/-deployment/issues/5)                                  |
+| 6   | `filter.js`    | [filter([1, 2, 3], x =&gt; x &gt; 10) returns [[]] instead of [] — result initialized incorrectly](https://github.com/roitonen/-deployment/issues/6)            |
+| 7   | `toString.js`  | [toString(null) returns &#34;null&#34; instead of &#34;&#34; — null and undefined not handled](https://github.com/roitonen/-deployment/issues/7)                |
 
 ---
 
