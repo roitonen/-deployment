@@ -153,7 +153,7 @@ Coverage reports are automatically sent to Coveralls after each pipeline run. Th
 
 The screenshot below shows the current coverage report on Coveralls:
 
-![Screenshot](docs/Coveralls.png)
+![Screenshot](docs/coveralls.png)
 
 ---
 
